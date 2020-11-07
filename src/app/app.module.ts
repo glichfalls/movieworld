@@ -8,13 +8,15 @@ import { MovieComponent } from "./components/movie/movie.component";
 import { FrontPageComponent } from "./components/front-page/front-page.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SliderComponent } from "./components/slider/slider.component";
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MovieComponent,
         FrontPageComponent,
-        SliderComponent
+        SliderComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
