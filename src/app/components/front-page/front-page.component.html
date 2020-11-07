@@ -2,10 +2,6 @@
 
     <h1>Movie World</h1>
 
-    <div class="movies">
-        <div *ngFor="let movie of movies">
-            <app-movie  [movie]="movie"></app-movie>
-        </div>
-    </div>
+    <app-slider [movies]="movies"></app-slider>
 
 </div>

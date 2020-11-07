@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Configuration, ConfigurationResponse, Media} from "../models/media.model";
+import {ConfigurationResponse, Media} from "../models/media.model";
 import {MoviesService} from "./movies.service";
 import {Observable, Subscription} from "rxjs";
 
