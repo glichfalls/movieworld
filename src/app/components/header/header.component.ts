@@ -13,10 +13,14 @@ export class HeaderComponent implements OnInit {
   }
 
     showHottest() {
-
+        console.log("Hottest pressed");
     }
 
     showFavorites(){
+        console.log("Favorites pressed");
+    }
 
+    update(value: string) {
+        console.log(value);
     }
 }
