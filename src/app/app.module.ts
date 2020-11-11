@@ -12,6 +12,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HottestMoviesComponent } from './components/hottest-movies/hottest-movies.component';
 import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-movies.component';
+import { InTheaterMoviesComponent } from './components/in-theater-movies/in-theater-movies.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-m
         SliderComponent,
         HeaderComponent,
         HottestMoviesComponent,
-        FavoriteMoviesComponent
+        FavoriteMoviesComponent,
+        InTheaterMoviesComponent
     ],
     imports: [
         BrowserModule,

@@ -17,16 +17,4 @@ export class HeaderComponent implements OnInit {
         this.sbar.valueChanges.subscribe(value => console.log(value));
   }
 
-    showHottest() {
-        console.log("Hottest pressed");
-    }
-
-    showFavorites(){
-        console.log("Favorites pressed");
-    }
-
-    update(value: string) {
-        console.log(value);
-    }
-
 }
