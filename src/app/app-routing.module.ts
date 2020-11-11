@@ -5,9 +5,9 @@ import {HottestMoviesComponent} from "./components/hottest-movies/hottest-movies
 import {FavoriteMoviesComponent} from "./components/favorite-movies/favorite-movies.component";
 
 const routes: Routes = [
-    {path: "/", component: FrontPageComponent},
-    {path: "/hottest", component: HottestMoviesComponent},
-    {path: "/favorites", component: FavoriteMoviesComponent},
+    {path: "", component: FrontPageComponent},
+    {path: "hottest", component: HottestMoviesComponent},
+    {path: "favorites", component: FavoriteMoviesComponent},
 ];
 
 @NgModule({
