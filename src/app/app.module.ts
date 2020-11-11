@@ -10,6 +10,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SliderComponent } from "./components/slider/slider.component";
 import { HeaderComponent } from './components/header/header.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { HottestMoviesComponent } from './components/hottest-movies/hottest-movies.component';
+import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-movies.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +19,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         MovieComponent,
         FrontPageComponent,
         SliderComponent,
-        HeaderComponent
+        HeaderComponent,
+        HottestMoviesComponent,
+        FavoriteMoviesComponent
     ],
     imports: [
         BrowserModule,

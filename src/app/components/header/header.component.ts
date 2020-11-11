@@ -28,4 +28,5 @@ export class HeaderComponent implements OnInit {
     update(value: string) {
         console.log(value);
     }
+
 }
