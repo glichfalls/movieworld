@@ -9,7 +9,7 @@ import { FrontPageComponent } from "./components/front-page/front-page.component
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SliderComponent } from "./components/slider/slider.component";
 import { HeaderComponent } from './components/header/header.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -25,7 +25,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
         HttpClientModule,
         NgbModule,
         FormsModule,
-        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
