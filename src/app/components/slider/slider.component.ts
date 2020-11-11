@@ -17,10 +17,9 @@ export class SliderComponent implements OnChanges {
         this.items = Math.floor(window.innerWidth / 300);
     }
 
-
     ngOnChanges(changes: any): void {
-        const groups = Math.ceil(this.movies.length / this.items);
-        const movies = changes.movies.currentValue;
+        const groups: number = Math.ceil(this.movies.length / this.items);
+        const movies: Array<Media> = changes.movies.currentValue;
         for (let i = 0; i < groups; i++) {
             this.groups[i] = [];
             for (let j = 0; j < this.items; j++) {
@@ -29,7 +28,6 @@ export class SliderComponent implements OnChanges {
                 }
             }
         }
-        console.log(this.groups);
     }
 
 }

@@ -1,6 +1,6 @@
 <div class="slider">
 
-    <ngb-carousel [showNavigationArrows]="false">
+    <ngb-carousel *ngIf="groups.length > 0" [showNavigationArrows]="false">
         <ng-template ngbSlide *ngFor="let group of groups">
             <div class="slide">
                 <app-movie *ngFor="let movie of group" [movie]="movie"></app-movie>
