@@ -1,5 +1,8 @@
 <header>
-    <img src="assets/Logo.png">
+
+    <a [routerLink]="['/']">
+        <img src="assets/Logo.png" alt="Movie World">
+    </a>
 
     <div class="headerbuttons">
         <form class="searchform">
@@ -11,15 +14,15 @@
                    (blur)="update(searchbar.value)" autofocus/>
         </form>
 
-        <button class="button" (click)="showHottest()">
+        <a [routerLink]="['/hottest']" class="button" (click)="showHottest()">
             <i class="material-icons">whatshot</i>
             <span>Beliebteste</span>
-        </button>
+        </a>
 
-        <button class="button" (click)="showFavorites()">
+        <a [routerLink]="['/favorites']" class="button" (click)="showFavorites()">
             <i class="material-icons">star</i>
             <span>Favoriten</span>
-        </button>
+        </a>
     </div>
 
 </header>
