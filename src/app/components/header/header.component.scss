@@ -1,0 +1,51 @@
+header {
+    img {
+        margin: 5px 5px;
+        width: 420px;
+    }
+
+    .headerbuttons {
+        margin-right: 20px;
+        margin-top: 20px;
+        display: inline-block;
+        float: right;
+        height: 40px;
+    }
+
+    .searchform {
+        display: inline-block;
+    }
+
+    .searchbar {
+        outline: 0;
+        border-width: 0 0 1px;
+        border-color: gray;
+    }
+
+    .searchbar:focus {
+        border-color: black;
+    }
+
+    .button {
+        background: lightgray;
+        margin-left: 10px;
+        border: none;
+        border-radius: 5px;
+        line-height: 30px;
+        width: 42px;
+        transition: all 0.3s ease-out;
+        white-space: nowrap;
+    }
+
+    .button:hover {
+        width: 130px;
+    }
+
+}
+
+.material-icons{
+    float: left;
+    font-size: 30px;
+    padding-right: 5px;
+}
+

@@ -1,0 +1,23 @@
+<header>
+    <img src="assets/Logo.png">
+
+    <div class="headerbuttons">
+        <form class="searchform">
+            <input #searchbar
+                   class="searchbar" placeholder="Film suchen"
+                   (keyup.enter)="update(searchbar.value)"
+                   (blur)="update(searchbar.value)">
+        </form>
+
+        <button class="button" (click)="showHottest()">
+            <i class="material-icons">whatshot</i>
+            <span>Beliebteste</span>
+        </button>
+
+        <button class="button" (click)="showFavorites()">
+            <i class="material-icons">star</i>
+            <span>Favoriten</span>
+        </button>
+    </div>
+
+</header>
