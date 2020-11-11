@@ -10,16 +10,20 @@
                    class="searchbar"
                    placeholder="Film suchen"
                    [formControl]="sbar"
-                   (keyup.enter)="update(searchbar.value)"
-                   (blur)="update(searchbar.value)" autofocus/>
+                   autofocus/>
         </form>
 
-        <a [routerLink]="['/hottest']" class="button" (click)="showHottest()">
+        <a [routerLink]="['/hottest']" class="button">
             <i class="material-icons">whatshot</i>
             <span>Beliebteste</span>
         </a>
 
-        <a [routerLink]="['/favorites']" class="button" (click)="showFavorites()">
+        <a [routerLink]="['/intheater']" class="button">
+            <i class="material-icons">star</i>
+            <span>Im Kino</span>
+        </a>
+
+        <a [routerLink]="['/favorites']" class="button">
             <i class="material-icons">star</i>
             <span>Favoriten</span>
         </a>
