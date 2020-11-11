@@ -1,5 +1,11 @@
 .movies {
+    background-color: #333333;
     display: flex;
     max-width: 100vw;
-    overflow-x: scroll;
+    padding: 15px;
+    color: #ffffff;
+
+    app-slider {
+        width: 100%;
+    }
 }

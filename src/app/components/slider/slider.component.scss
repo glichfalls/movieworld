@@ -1,9 +1,8 @@
 .slide {
-    background-color: #333333;
-    padding: 15px 0;
+    padding: 0;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     app-movie {
         width: 300px;

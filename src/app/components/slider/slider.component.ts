@@ -8,6 +8,7 @@ import {Media} from "../../models/media.model";
 })
 export class SliderComponent implements OnChanges {
 
+    @Input() title: string;
     @Input() movies: Array<Media>;
 
     public groups: Array<Array<Media>> = [];
