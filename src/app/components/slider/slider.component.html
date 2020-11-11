@@ -1,3 +1,11 @@
 <div class="slider">
-    <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+
+    <ngb-carousel [showNavigationArrows]="false">
+        <ng-template ngbSlide *ngFor="let group of groups">
+            <div class="slide">
+                <app-movie *ngFor="let movie of group" [movie]="movie"></app-movie>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+
 </div>
