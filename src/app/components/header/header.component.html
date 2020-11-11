@@ -4,9 +4,11 @@
     <div class="headerbuttons">
         <form class="searchform">
             <input #searchbar
-                   class="searchbar" placeholder="Film suchen"
+                   class="searchbar"
+                   placeholder="Film suchen"
+                   [formControl]="sbar"
                    (keyup.enter)="update(searchbar.value)"
-                   (blur)="update(searchbar.value)">
+                   (blur)="update(searchbar.value)" autofocus/>
         </form>
 
         <button class="button" (click)="showHottest()">

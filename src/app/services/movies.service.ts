@@ -15,8 +15,11 @@ export class MoviesService {
         return `${API_URL}/${API_VERSION}/${uri}?api_key=${API_KEY}` + query.map(item => `&${item.key}=${item.value}`).join();
     }
 
-    public find(search: string): Array<Media> {
-        return [];
+    public find(search: string, page: number): Observable<MovieResponse> {
+            return this.http.get<MovieResponse>(MoviesService.getUrl(`search/movie`, [
+                {key: "query", value: search},
+                {key: "page", value: page},
+            ]));
     }
 
     public getPopularMovies(language: string, page: number, region: string): Observable<MovieResponse> {
@@ -27,16 +30,26 @@ export class MoviesService {
         ]));
     }
 
-    public getBestRatedMovies(): Array<MovieResponse> {
-        return [];
+    public getBestRatedMovies(language: string, page: number, region: string): Observable<MovieResponse> {
+        return this.http.get<MovieResponse>(MoviesService.getUrl(`movie/top_rated`, [
+            {key: "language", value: language},
+            {key: "page", value: page},
+            {key: "region", value: region},
+        ]));
     }
 
-    public getMoviesCurrentlyInTheater(): Array<MovieResponse> {
-        return [];
+    public getMoviesCurrentlyInTheater(language: string, page: number, region: string): Observable<MovieResponse> {
+        return this.http.get<MovieResponse>(MoviesService.getUrl(`movie/now_playing`, [
+            {key: "language", value: language},
+            {key: "page", value: page},
+            {key: "region", value: region},
+        ]));
     }
 
-    public getGenres(): Array<Genre> {
-        return [];
+    public getGenres(language: string): Observable<Genre> {
+        return this.http.get<Genre>(MoviesService.getUrl(`genre/movie/list`, [
+            {key: "language", value: language},
+        ]));
     }
 
 
