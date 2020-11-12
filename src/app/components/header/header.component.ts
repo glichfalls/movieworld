@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from "@angular/forms";
+import {Media, MovieResponse} from "../../models/media.model";
+import {MoviesService} from "../../services/movies.service";
+import {debounceTime, distinctUntilChanged} from "rxjs/operators";
 
 @Component({
   selector: 'app-header',
@@ -10,11 +13,21 @@ import { FormControl } from "@angular/forms";
 export class HeaderComponent implements OnInit {
 
     sbar = new FormControl();
+    predictions: Array<Media>;
 
-    constructor() { }
+    constructor(private moviesService: MoviesService) { }
 
-  ngOnInit(): void {
-        this.sbar.valueChanges.subscribe(value => console.log(value));
-  }
+    ngOnInit(): void {
+        this.sbar.valueChanges
+            .subscribe(keyword => this.refreshPredictions(keyword));
+    }
+
+    refreshPredictions(keyword: string) {
+        this.moviesService.find(keyword, 1).subscribe((data: MovieResponse) => {
+            this.predictions = data.results;
+        });;
+    }
+
+
 
 }

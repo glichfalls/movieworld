@@ -1,4 +1,5 @@
 header {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,10 +14,15 @@ header {
         align-items: center;
     }
 
+    .searchform {
+        position: relative;
+    }
+
     .searchbar {
         outline: 0;
         border-width: 0 0 1px;
         border-color: gray;
+        width: 300px;
     }
 
     .searchbar:focus {
@@ -45,10 +51,29 @@ header {
         }
     }
 
+    .predictionlist {
+        z-index: 1;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+        left: 0;
+        top: 30px;
+        max-height: 30vh;
+        overflow-y: auto;
+        background: #fff
+    }
+    .predictionitem {
+        cursor: pointer;
+        height: 45px;
+    }
+    .predictionitem:hover {
+        background:  gray;
+        color: white;
+    }
+
 }
 
 .material-icons{
     font-size: 30px;
-
 }
 

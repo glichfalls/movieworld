@@ -11,6 +11,12 @@
                    placeholder="Film suchen"
                    [formControl]="sbar"
                    autofocus/>
+
+            <ul class="predictionlist">
+                <li *ngFor="let result of predictions" class="predictionitem">
+                    <p class="predictionitemtitle">{{result.title}}</p>
+                    <p class="predictionitemdate">{{result.release_date}}</p>
+            </ul>
         </form>
 
         <a [routerLink]="['/hottest']" class="button">
@@ -19,7 +25,7 @@
         </a>
 
         <a [routerLink]="['/intheater']" class="button">
-            <i class="material-icons">star</i>
+            <i class="material-icons">movie</i>
             <span>Im Kino</span>
         </a>
 
