@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Configuration, ConfigurationResponse} from "./models/media.model";
 import {TMDBService} from "./services/tmdb.service";
 
@@ -7,11 +7,15 @@ import {TMDBService} from "./services/tmdb.service";
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-    public TMDBConfiguration: Configuration;
+export class AppComponent implements OnInit {
+
+
     constructor(private tmdbService: TMDBService) {
-        this.tmdbService.getConfiguration().subscribe((data: ConfigurationResponse) => {
-            this.TMDBConfiguration = data.images;
-        });
+
     }
+
+    ngOnInit(): void {
+
+    }
+
 }

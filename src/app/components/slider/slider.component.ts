@@ -1,5 +1,5 @@
-import {Component, DoCheck, Input, OnChanges, OnInit} from "@angular/core";
-import {Media} from "../../models/media.model";
+import {Component, Input, OnChanges} from "@angular/core";
+import {Configuration, Media} from "../../models/media.model";
 
 @Component({
     selector: "app-slider",
