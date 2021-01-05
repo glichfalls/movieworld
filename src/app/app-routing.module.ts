@@ -7,9 +7,9 @@ import {InTheaterMoviesComponent} from "./components/in-theater-movies/in-theate
 
 const routes: Routes = [
     {path: "", component: FrontPageComponent},
-    {path: "hottest", component: HottestMoviesComponent},
+    {path: "hot", component: HottestMoviesComponent},
     {path: "favorites", component: FavoriteMoviesComponent},
-    {path: "intheater", component: InTheaterMoviesComponent},
+    {path: "in-theater", component: InTheaterMoviesComponent},
 ];
 
 @NgModule({
@@ -17,3 +17,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

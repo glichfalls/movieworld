@@ -13,6 +13,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HottestMoviesComponent } from './components/hottest-movies/hottest-movies.component';
 import { FavoriteMoviesComponent } from './components/favorite-movies/favorite-movies.component';
 import { InTheaterMoviesComponent } from './components/in-theater-movies/in-theater-movies.component';
+import { GridComponent } from './components/grid/grid.component';
+import { GridContainerComponent } from './components/grid-container/grid-container.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +25,9 @@ import { InTheaterMoviesComponent } from './components/in-theater-movies/in-thea
         HeaderComponent,
         HottestMoviesComponent,
         FavoriteMoviesComponent,
-        InTheaterMoviesComponent
+        InTheaterMoviesComponent,
+        GridComponent,
+        GridContainerComponent
     ],
     imports: [
         BrowserModule,

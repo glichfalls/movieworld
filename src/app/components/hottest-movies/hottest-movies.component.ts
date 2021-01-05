@@ -8,7 +8,9 @@ import {MoviesService} from "../../services/movies.service";
   styleUrls: ['./hottest-movies.component.scss']
 })
 export class HottestMoviesComponent implements OnInit {
-      public movies: Array<Media> = [];
+
+    public movies: Array<Media> = [];
+
       constructor(private moviesService: MoviesService) {
           this.moviesService.getBestRatedMovies("de-CH", 1, "CH").subscribe((data: MovieResponse) => {
               console.log(data);
