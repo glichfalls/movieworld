@@ -1,22 +1,22 @@
 <header>
 
     <a [routerLink]="['/']">
-        <img src="assets/Logo.png" alt="Movie World" />
+        <img src="/assets/Logo.png" alt="Movie World" />
     </a>
 
-    <div class="headerbuttons">
-        <form class="searchform">
-            <input #searchbar
-                   class="searchbar"
-                   placeholder="Film suchen"
-                   [formControl]="sbar"
-                   autofocus/>
+    <div class="navigation">
 
-            <ul class="predictionlist">
-                <li *ngFor="let result of predictions" class="predictionitem">
-                    <p class="predictionitemtitle">{{result.title}}</p>
-                    <p class="predictionitemdate">{{result.release_date}}</p>
-            </ul>
+        <form class="search-form">
+
+            <input class="search-bar" placeholder="Film suchen" [formControl]="sbar" autofocus />
+
+            <div *ngIf="predictions.length > 0" class="prediction-list">
+                <div *ngFor="let result of predictions" class="prediction-item">
+                    <span class="prediction-item-title">{{result.title}}</span>
+                    <span class="prediction-item-date">{{result.release_date}}</span>
+                </div>
+            </div>
+
         </form>
 
         <a [routerLink]="['/hot']" class="button">
