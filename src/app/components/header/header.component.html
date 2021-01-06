@@ -10,8 +10,8 @@
 
             <input class="search-bar" placeholder="Film suchen" [formControl]="sbar" autofocus />
 
-            <div *ngIf="predictions.length > 0" class="prediction-list">
-                <div *ngFor="let result of predictions" class="prediction-item">
+            <div *ngIf="predictions && predictions.length > 0" class="prediction-list">
+                <div (click)="click(result)" *ngFor="let result of predictions" class="prediction-item">
                     <span class="prediction-item-title">{{result.title}}</span>
                     <span class="prediction-item-date">{{result.release_date}}</span>
                 </div>

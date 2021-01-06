@@ -44,3 +44,29 @@ export interface Genre {
   id: number;
   name: string;
 }
+
+export interface ProductionCompany {
+    id: number;
+    name: string;
+    logo_path: string|null;
+    origin_country: string;
+}
+
+export interface MovieDetails {
+    adult: boolean;
+    backdrop_path: string|null;
+    budget: number;
+    genres: Array<Genre>;
+    homepage: string|null;
+    overview: string|null;
+    release_date: string;
+    popularity: number;
+    revenue: number;
+    runtime: number|null;
+    production_companies: Array<ProductionCompany>;
+    title: string;
+    video: boolean;
+    status: string;
+    vote_average: number;
+    vote_count: number
+}

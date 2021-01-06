@@ -1,8 +1,34 @@
-<div class="movie" [style.background]="'url(' + this.image + ')'">
-    <div class="inner">
-        <h2>{{movie.title}}</h2>
-        <span>{{movie.vote_average}}</span>
+<div *ngIf="movie != null" class="movie">
+    <div class="movie-inner">
 
-        <p>{{movie.release_date}}</p>
+        <div class="close" (click)="hide()">
+            <span class="material-icons">close</span>
+        </div>
+
+        <img class="movie-inner-header" src="{{image}}" alt="" />
+
+        <div class="movie-inner-body">
+
+            <h2>{{movie.title}}</h2>
+
+            <div class="movie-inner-meta">
+                <span>{{getMovieDate()}}</span>
+                <span>{{details.runtime}} min</span>
+                <span>{{details.status}}</span>
+                <span>{{details.vote_average * 10}}%</span>
+            </div>
+
+            <div class="movie-inner-genres">
+                <div class="badge bg-dark" *ngFor="let genre of details.genres">{{genre.name}}</div>
+            </div>
+
+            <p>{{movie.overview}}</p>
+
+            <span (click)="like()" class="movie-inner-like material-icons">
+                {{isLiked ? 'favorite' : 'favorite_border' }}
+            </span>
+
+        </div>
     </div>
 </div>
+

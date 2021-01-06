@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {Media, MovieResponse} from "../../models/media.model";
 import {MoviesService} from "../../services/movies.service";
+import {TMDBService} from "../../services/tmdb.service";
+import {MovieModalService} from "../../services/movie-modal.service";
 
 @Component({
     selector: 'app-header',
@@ -14,7 +16,7 @@ export class HeaderComponent implements OnInit {
     public sbar = new FormControl();
     public predictions: Array<Media>;
 
-    constructor(private moviesService: MoviesService) { }
+    constructor(private moviesService: MoviesService, private modal: MovieModalService) { }
 
     ngOnInit(): void {
         this.sbar.valueChanges.subscribe(keyword => this.refreshPredictions(keyword));
@@ -26,5 +28,8 @@ export class HeaderComponent implements OnInit {
         });
     }
 
+    public click(movie: Media) {
+        this.modal.showMovie(movie);
+    }
 
 }

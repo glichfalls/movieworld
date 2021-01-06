@@ -37,7 +37,7 @@ header {
             max-height: 50vh;
             overflow-y: auto;
             background: #222222EE;
-            z-index: 1;
+            z-index: 9999;
             padding: 0;
 
             .prediction-item {
