@@ -10,7 +10,6 @@ export class MovieModalService {
     movie: Subject<Media> = new Subject<Media>();
 
     showMovie(movie: Media|null) {
-        console.log('triggered');
         this.movie.next(movie);
     }
 

@@ -8,8 +8,10 @@ import {MoviesService} from "../../services/movies.service";
     styleUrls: ["./front-page.component.scss"]
 })
 export class FrontPageComponent {
+
     public popular: Array<Media> = [];
     public inTheater: Array<Media> = [];
+
     constructor(private moviesService: MoviesService) {
         this.moviesService.getPopularMovies("de-CH", 1, "CH").subscribe((data: MovieResponse) => {
             this.popular = data.results;
@@ -18,4 +20,5 @@ export class FrontPageComponent {
             this.inTheater = data.results;
         })
     }
+
 }

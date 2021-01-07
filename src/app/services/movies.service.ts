@@ -22,6 +22,10 @@ export class MoviesService {
         ]));
     }
 
+    public getById(id: number): Observable<Media> {
+        return this.http.get<Media>(MoviesService.getUrl(`movie/${id}`));
+    }
+
     public getPopularMovies(language: string, page: number, region: string): Observable<MovieResponse> {
         return this.http.get<MovieResponse>(MoviesService.getUrl(`movie/popular`, [
             {key: "language", value: language},
