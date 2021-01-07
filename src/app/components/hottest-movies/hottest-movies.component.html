@@ -1,5 +1,9 @@
 <div>
 
-    <app-grid-container title="Hot Movies" [movies]="movies"></app-grid-container>
+    <app-grid-container
+        title="Hot Movies"
+        [movies]="movies"
+        (pageEvent)="reload($event)"
+    ></app-grid-container>
 
 </div>

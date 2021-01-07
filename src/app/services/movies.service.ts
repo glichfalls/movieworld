@@ -12,7 +12,7 @@ export class MoviesService {
     constructor(private http: HttpClient) {}
 
     public static getUrl(uri: string, query: Array<RequestQueryItem> = []): string {
-        return `${API_URL}/${API_VERSION}/${uri}?api_key=${API_KEY}` + query.map(item => `&${item.key}=${item.value}`).join();
+        return `${API_URL}/${API_VERSION}/${uri}?api_key=${API_KEY}` + query.map(item => `&${item.key}=${item.value}`).join('');
     }
 
     public find(search: string, page: number): Observable<MovieResponse> {

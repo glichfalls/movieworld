@@ -2,8 +2,16 @@
 
     <h1>{{title}}</h1>
 
-    <div class="grid-container-items">
-        <app-grid *ngFor="let movie of movies" [movie]="movie"></app-grid>
+    <div class="grid-container-navigation">
+        <button (click)="goTo(page)" *ngFor="let page of pages" [className]="page === input.page ? 'active' : ''" >{{page}}</button>
+    </div>
+
+    <div *ngIf="input !== null" class="grid-container-items">
+        <app-grid *ngFor="let movie of input.results" [movie]="movie"></app-grid>
+    </div>
+
+    <div class="grid-container-navigation">
+        <button (click)="goTo(page)" *ngFor="let page of pages" [className]="page === input.page ? 'active' : ''" >{{page}}</button>
     </div>
 
 </div>

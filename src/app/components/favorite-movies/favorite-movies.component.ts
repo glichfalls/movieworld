@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {LikesService} from "../../services/likes.service";
 import {Like, LikeResponse} from "../../models/like.model";
-import {Media} from "../../models/media.model";
+import {Media, MovieResponse} from "../../models/media.model";
 
 @Component({
     selector: 'app-favorite-movies',
@@ -11,7 +11,12 @@ import {Media} from "../../models/media.model";
 })
 export class FavoriteMoviesComponent implements OnInit {
 
-    movies: Array<Media> = [];
+    movies: MovieResponse = {
+        total_pages: 1,
+        page: 1,
+        total_results: 1,
+        results: [],
+    };
 
     constructor(private movieService: MoviesService, private likeService: LikesService) { }
 
@@ -20,7 +25,7 @@ export class FavoriteMoviesComponent implements OnInit {
             if(response.status === 200) {
                 response.payload.map((like: Like) => {
                     this.movieService.getById(like.movie).subscribe((movie: Media) => {
-                        this.movies.push(movie);
+                        this.movies.results.push(movie);
                     });
                 });
             }
