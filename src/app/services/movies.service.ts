@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {Genre, Media, MovieDetails, MovieResponse, RequestQueryItem} from "../models/media.model";
+import {Genre, GenreResponse, Media, MovieDetails, MovieResponse, RequestQueryItem} from "../models/media.model";
 import {Observable} from "rxjs";
 import {API_KEY, API_URL, API_VERSION} from "../models/tmdb.model";
 
@@ -20,6 +20,13 @@ export class MoviesService {
             {key: "query", value: search},
             {key: "page", value: page},
         ]));
+    }
+
+    public discover(genre: number, page: number): Observable<MovieResponse> {
+        return this.http.get<MovieResponse>(MoviesService.getUrl(`discover/movie`, [
+            {key: "with_genres", value: genre},
+            {key: "page", value: page},
+        ]))
     }
 
     public getById(id: number): Observable<Media> {
@@ -50,8 +57,8 @@ export class MoviesService {
         ]));
     }
 
-    public getGenres(language: string): Observable<Genre> {
-        return this.http.get<Genre>(MoviesService.getUrl(`genre/movie/list`, [
+    public getGenres(language: string): Observable<GenreResponse> {
+        return this.http.get<GenreResponse>(MoviesService.getUrl(`genre/movie/list`, [
             {key: "language", value: language},
         ]));
     }

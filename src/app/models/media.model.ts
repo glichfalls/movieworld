@@ -46,6 +46,10 @@ export interface Genre {
   name: string;
 }
 
+export interface GenreResponse {
+    genres: Array<Genre>;
+}
+
 export interface ProductionCompany {
     id: number;
     name: string;
