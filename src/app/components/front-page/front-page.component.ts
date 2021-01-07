@@ -9,15 +9,15 @@ import {MoviesService} from "../../services/movies.service";
 })
 export class FrontPageComponent {
 
-    public popular: Array<Media> = [];
-    public inTheater: Array<Media> = [];
+    public popular: MovieResponse|null = null;
+    public inTheater: MovieResponse|null = null;
 
     constructor(private moviesService: MoviesService) {
         this.moviesService.getPopularMovies("de-CH", 1, "CH").subscribe((data: MovieResponse) => {
-            this.popular = data.results;
+            this.popular = data;
         });
         this.moviesService.getMoviesCurrentlyInTheater("de-CH", 1, "CH").subscribe((data: MovieResponse) => {
-            this.inTheater = data.results;
+            this.inTheater = data;
         })
     }
 
