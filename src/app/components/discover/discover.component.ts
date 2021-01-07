@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
-import {Genre, GenreResponse, Media, MovieResponse} from "../../models/media.model";
+import {Genre, GenreResponse, MovieResponse} from "../../models/media.model";
 
 @Component({
     selector: 'app-discover',
