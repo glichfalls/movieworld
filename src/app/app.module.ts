@@ -17,6 +17,7 @@ import { GridContainerComponent } from './components/grid-container/grid-contain
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import { DiscoverComponent } from './components/discover/discover.component';
+import { TopRatedMoviesComponent } from './components/top-rated-movies/top-rated-movies.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { DiscoverComponent } from './components/discover/discover.component';
         InTheaterMoviesComponent,
         GridComponent,
         GridContainerComponent,
-        DiscoverComponent
+        DiscoverComponent,
+        TopRatedMoviesComponent
     ],
     imports: [
         BrowserModule,

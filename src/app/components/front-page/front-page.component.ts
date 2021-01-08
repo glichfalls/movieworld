@@ -15,15 +15,8 @@ export class FrontPageComponent implements OnInit {
     constructor(private moviesService: MoviesService) {}
 
     ngOnInit(): void {
-        this.getPopular();
         this.getInTheater();
     }
-
-    public getPopular = (page: number = 1) => {
-        this.moviesService.getPopularMovies("de-CH", page, "CH").subscribe((data: MovieResponse) => {
-            this.popular = data;
-        });
-    };
 
     public getInTheater = (page: number = 1) => {
         console.log(page);

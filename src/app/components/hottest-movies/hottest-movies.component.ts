@@ -18,7 +18,7 @@ export class HottestMoviesComponent implements OnInit {
     }
 
     public reload = (page: number = 1) => {
-        this.moviesService.getBestRatedMovies("de-CH", page, "CH").subscribe((data: MovieResponse) => {
+        this.moviesService.getPopularMovies("de-CH", page, "CH").subscribe((data: MovieResponse) => {
             this.movies = data;
         });
     }
