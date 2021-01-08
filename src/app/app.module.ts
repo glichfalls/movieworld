@@ -7,7 +7,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { MovieComponent } from "./components/movie/movie.component";
 import { FrontPageComponent } from "./components/front-page/front-page.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { SliderComponent } from "./components/slider/slider.component";
 import { HeaderComponent } from './components/header/header.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HottestMoviesComponent } from './components/hottest-movies/hottest-movies.component';
@@ -24,7 +23,6 @@ import { DiscoverComponent } from './components/discover/discover.component';
         AppComponent,
         MovieComponent,
         FrontPageComponent,
-        SliderComponent,
         HeaderComponent,
         HottestMoviesComponent,
         FavoriteMoviesComponent,
