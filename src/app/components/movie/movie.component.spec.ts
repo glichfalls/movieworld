@@ -1,25 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { MovieComponent } from './movie.component';
+import {MovieComponent} from './movie.component';
+import {TestBed} from "@angular/core/testing";
 
 describe('MovieComponent', () => {
-  let component: MovieComponent;
-  let fixture: ComponentFixture<MovieComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MovieComponent ]
-    })
-    .compileComponents();
-  });
+    let service: MovieComponent;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MovieComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+        });
+        service = TestBed.inject(MovieComponent);
+    });
+
+    it('should open when movie data is given', () => {
+
+        expect(service.movie).toBeNull();
+
+    });
+
 });
