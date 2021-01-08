@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, ElementRef, Input, Renderer2, ViewChild} from "@angular/core";
 import {Media, MovieDetails} from "../../models/media.model";
 import {TMDBService} from "../../services/tmdb.service";
 import {MovieModalService} from "../../services/movie-modal.service";
@@ -45,8 +45,15 @@ export class MovieComponent {
         private tmdb: TMDBService,
         private modal: MovieModalService,
         private movieService: MoviesService,
-        private likeService: LikesService
-    ) { }
+        private likeService: LikesService,
+        private renderer: Renderer2
+    ) {
+        this.renderer.listen('window', 'click',(e:Event)=>{
+            if(e.target == document.getElementById('movie') && this.movie !== null){
+                this.hide();
+            }
+        });
+    }
 
     public hide = (): void  =>this.modal.showMovie(null);
 

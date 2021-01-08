@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "movie-world"
+    }
+  },
+  "defaultProject": "movie-world",
+  "cli": {
+    "analytics": "6e0935bc-766e-472e-b794-a4e21693b5dd"
+  }
 }
