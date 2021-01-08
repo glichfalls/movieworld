@@ -26,7 +26,7 @@ export class GridComponent {
     constructor(private tmdb: TMDBService, private modal: MovieModalService) {}
 
     public click() {
-        this.modal.showMovie(this.movie);
+        this.modal.showMovie(this.details);
     }
 
 }

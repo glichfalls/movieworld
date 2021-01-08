@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {Media, MovieResponse} from "../../models/media.model";
+import {Component, OnInit} from "@angular/core";
+import {MovieResponse} from "../../models/media.model";
 import {MoviesService} from "../../services/movies.service";
 
 @Component({
@@ -7,18 +7,30 @@ import {MoviesService} from "../../services/movies.service";
     templateUrl: "./front-page.component.html",
     styleUrls: ["./front-page.component.scss"]
 })
-export class FrontPageComponent {
+export class FrontPageComponent implements OnInit {
 
     public popular: MovieResponse|null = null;
     public inTheater: MovieResponse|null = null;
 
-    constructor(private moviesService: MoviesService) {
-        this.moviesService.getPopularMovies("de-CH", 1, "CH").subscribe((data: MovieResponse) => {
+    constructor(private moviesService: MoviesService) {}
+
+    ngOnInit(): void {
+        this.getPopular();
+        this.getInTheater();
+    }
+
+    public getPopular = (page: number = 1) => {
+        this.moviesService.getPopularMovies("de-CH", page, "CH").subscribe((data: MovieResponse) => {
             this.popular = data;
         });
-        this.moviesService.getMoviesCurrentlyInTheater("de-CH", 1, "CH").subscribe((data: MovieResponse) => {
+    };
+
+    public getInTheater = (page: number = 1) => {
+        console.log(page);
+        this.moviesService.getMoviesCurrentlyInTheater("de-CH", page, "CH").subscribe((data: MovieResponse) => {
             this.inTheater = data;
-        })
-    }
+            console.log(data);
+        });
+    };
 
 }

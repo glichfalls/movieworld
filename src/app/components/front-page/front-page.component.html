@@ -1,7 +1,7 @@
 <div class="movies">
 
-    <app-grid-container title="Popular Movies" [movies]="popular"></app-grid-container>
+    <app-grid-container (pageEvent)="getPopular($event)" title="Popular Movies" [movies]="popular"></app-grid-container>
 
-    <app-grid-container title="In Theater" [movies]="inTheater"></app-grid-container>
+    <app-grid-container (pageEvent)="getInTheater($event)" title="In Theater" [movies]="inTheater"></app-grid-container>
 
 </div>
