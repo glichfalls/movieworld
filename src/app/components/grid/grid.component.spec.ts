@@ -2,9 +2,10 @@ import {TestBed} from '@angular/core/testing';
 import {GridComponent} from './grid.component';
 import {TMDBService} from "../../services/tmdb.service";
 import {MovieModalService} from "../../services/movie-modal.service";
-import {FavoriteMoviesComponent} from "../favorite-movies/favorite-movies.component";
 import {Observable, of} from "rxjs";
 import {ConfigurationResponse, Media} from "../../models/media.model";
+import {HttpClientModule} from "@angular/common/http";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('GridComponent', () => {
 
@@ -13,13 +14,13 @@ describe('GridComponent', () => {
     let tMDBServiceStub:  Partial<TMDBService>;
     let movieModalServiceStub: Partial<MovieModalService>;
 
-    beforeEach(async () => {
+    beforeEach(async ()  => {
 
         tMDBServiceStub = {
             getConfiguration: (): Observable<ConfigurationResponse> => of({
                 images: {
-                    base_url: '',
-                    secure_base_url: '',
+                    base_url: 'http://example.com/',
+                    secure_base_url: 'https://example.com/',
                     backdrop_sizes: [],
                     logo_sizes: [],
                     poster_sizes: [],
@@ -37,29 +38,25 @@ describe('GridComponent', () => {
 
         TestBed.configureTestingModule({
             declarations: [GridComponent],
+            imports: [HttpClientModule],
             providers: [
+                HttpClientTestingModule,
                 { provide: TMDBService, useValue: tMDBServiceStub },
                 { provide: MovieModalService, useValue: movieModalServiceStub }
             ]
-        });
+        }).compileComponents();
 
-        fixture = TestBed.createComponent(FavoriteMoviesComponent);
-
-        fixture.debugElement.injector.get(MovieModalService);
+        fixture = TestBed.createComponent(GridComponent);
 
         component = fixture.componentInstance;
 
         //@ts-ignore
         const movie: Media = {
-            id: 1,
-            title: 'test'
+            title: 'test',
+            poster_path: 'test.jpg',
         };
 
         component.movie = movie;
-
-        el = fixture.nativeElement.querySelector('h2');
-
-        fixture.detectChanges();
 
     });
 
@@ -68,9 +65,8 @@ describe('GridComponent', () => {
     });
 
     it('should show grid when movie is given', () => {
-
-        expect(el.textContent).toBe('test');
-
+        fixture.detectChanges();
+        expect(fixture.nativeElement.querySelector('.movie-grid h2')?.textContent).toBe('test');
     });
 
 });

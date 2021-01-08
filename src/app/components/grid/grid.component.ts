@@ -10,15 +10,20 @@ import {MovieModalService} from "../../services/movie-modal.service";
 })
 export class GridComponent {
 
-    @Input() movie: Media;
-
+    public details: Media | null;
     public image: string;
 
-    constructor(private tmdb: TMDBService, private modal: MovieModalService) {
-        tmdb.getConfiguration().subscribe(config => {
-            this.image = `${config.images.secure_base_url}${config.images.poster_sizes[4]}${this.movie.poster_path}`;
-        });
+    @Input()
+    set movie(movie: Media | null) {
+        this.details = movie;
+        if(movie !== null) {
+            this.tmdb.getConfiguration().subscribe(config => {
+                this.image = `${config.images.secure_base_url}${config.images.poster_sizes[4]}${movie.poster_path}`;
+            });
+        }
     }
+
+    constructor(private tmdb: TMDBService, private modal: MovieModalService) {}
 
     public click() {
         this.modal.showMovie(this.movie);

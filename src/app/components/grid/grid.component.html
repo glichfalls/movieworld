@@ -1,4 +1,4 @@
-<div class="movie-grid" (click)="click()">
-    <img src="{{image}}" alt="{{movie.title}}" />
-    <h2>{{movie.title}}</h2>
+<div *ngIf="details !== null" class="movie-grid" (click)="click()">
+    <img src="{{image}}" alt="{{details.title}}" />
+    <h2>{{details.title}}</h2>
 </div>
