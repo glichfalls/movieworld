@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, Renderer2, ViewChild} from "@angular/core";
+import {Component, Input, Renderer2} from "@angular/core";
 import {Media, MovieDetails} from "../../models/media.model";
 import {TMDBService} from "../../services/tmdb.service";
 import {MovieModalService} from "../../services/movie-modal.service";
