@@ -23,9 +23,13 @@ export class HeaderComponent implements OnInit {
     }
 
     refreshPredictions(keyword: string) {
-        this.moviesService.find(keyword, 1).subscribe((data: MovieResponse) => {
-            this.predictions = data.results;
-        });
+        if (keyword != "") {
+            this.moviesService.find(keyword, 1).subscribe((data: MovieResponse) => {
+                this.predictions = data.results;
+            })
+        } else {
+            this.predictions = null;
+        }
     }
 
     public click(movie: Media) {
