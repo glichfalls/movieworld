@@ -6,9 +6,8 @@ TMDP API used: https://www.themoviedb.org/
 
 # Schemes
 
-##Component hierarchy
+## Component hierarchy
 ![](docs/Component Hierarchy.png)
 
-##Interfacedescription
+## Interfacedescription
 ![](docs/Schnittstellenbeschreibung.png)
-
